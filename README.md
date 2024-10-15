@@ -3,13 +3,13 @@
 Microcontroller used : Arduino DUE
 
 Important :
-  1. I have not used [SparkFun_BMI270_Arduino_Library](https://github.com/sparkfun/SparkFun_BMI270_Arduino_Library) or [Arduino_BMI270_BMM150](https://github.com/arduino-libraries/Arduino_BMI270_BMM150)  because I assumed we do not have SparkFun BMI270 6DoF IMU Breakout or Arduino Nano 33 BLE Sense Rev2 but rather only a standalone working BMI270 IMU. I have used the API provided directly by Bosh Sensor Tech [BMI270_Sensor_API](https://github.com/boschsensortec/BMI270_SensorAPI) to connect to the BMI270 IMU.
+  1. [SparkFun_BMI270_Arduino_Library](https://github.com/sparkfun/SparkFun_BMI270_Arduino_Library) or [Arduino_BMI270_BMM150](https://github.com/arduino-libraries/Arduino_BMI270_BMM150) have not been used based on the assumption that we do not have SparkFun BMI270 6DoF IMU Breakout or Arduino Nano 33 BLE Sense Rev2 but rather only a standalone working BMI270 IMU. The API provided directly by Bosh Sensor Tech [BMI270_Sensor_API](https://github.com/boschsensortec/BMI270_SensorAPI) to connect to the BMI270 IMU has been used.
 
-  2. Due to lack of avability of BMI270 I cannot verify the working of the code on actual hardware setup. I have verified the working of sensor data processing by making some fake sensor data and performing state calculations on it. This is available in the file ______. For the final file I have referred to many examples to prevent against any errors. I also couldn't find a BMI270 Arduino Interface Simulator. 
+  2. Due to lack of avability of BMI270 the code cannot be verified on actual hardware setup. The working of sensor data processing part of code has been verified by making some fake sensor data and performing state calculations on it. This is available in the file ______. For the final file many examples have been referred to prevent against any errors. A BMI270 Arduino Interface Simulator also couldn't be found. 
 
-  3. I have assumed the accelerometer of the sensor is located at the center of mass of the system. Thus accelerometer only measures linear acceleration and gyroscope readings can be used to get orientation.
+  3. The accelerometer sensor has been assumed to be located at the center of mass of the system. Thus accelerometer only measures linear acceleration and gyroscope readings can be used to get orientation.
 
-  4. Accelerometer values can be used along with gyroscope to give more accurate estimation of orientation. However this only works when there isn't linear motion since we use gravity to calculate the angle change. I have assumed there is enough linear acceleration to make readings of accelerometer for orientation calculation incorrect.
+  4. Accelerometer values can be used along with gyroscope to give more accurate estimation of orientation. However this only works when there isn't linear motion since we use gravity to calculate the angle change. Enough linear acceleration has been assumed to make readings of accelerometer for orientation calculation incorrect.
   
   5. I have explained parts of the code below. Refer to comments given in code for in-depth understanding.
 
