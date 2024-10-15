@@ -61,26 +61,50 @@ Module Working :
      
   7. Based on these values final states are calculated.
      
-    ```
-    if (current_state == "Stationary") {
-      State_Signal(current_state, prev_state, prev_millis, current_millis, ledState);
-    } else if (current_state == "Motion") {
-      State_Signal(current_state, prev_state, prev_millis, current_millis, ledState);
-    } else if (current_state == "High Jerk") {
-      State_Signal(current_state, prev_state, prev_millis, current_millis, ledState);
-    } else if (current_state == "Displaced") {
-      State_Signal(current_state, prev_state, prev_millis, current_millis, ledState);
-    }
-    ```
+      ```
+      if (current_state == "Stationary") {
+        State_Signal(current_state, prev_state, prev_millis, current_millis, ledState);
+      } else if (current_state == "Motion") {
+        State_Signal(current_state, prev_state, prev_millis, current_millis, ledState);
+      } else if (current_state == "High Jerk") {
+        State_Signal(current_state, prev_state, prev_millis, current_millis, ledState);
+      } else if (current_state == "Displaced") {
+        State_Signal(current_state, prev_state, prev_millis, current_millis, ledState);
+      }
+      ```
 
 
 ## Part 3 : Audio and Visual Representation Of States
 
+To make non-blocking code (allow peripherals like LED and buzzer to run alongside processing code) I have used millis() function for making LED PWN signal and tone() to transmit square wave for buzzer.
+
 Representation Of States :
 
-  1. Stationary : RED LED connected is blinked at every 500ms (defined by interval_normal variable).
-  2. Motion : BLUE LED connected is blinked at every 500ms (defined by interval_normal variable).
-  3. High Jerk : All LEDs connected are blinked at every 100ms (defined by interval_alert variable) and audio sound of 1000Hz is made by the connected buzzer for 200ms.
-  4. Displacement Of More Than 1m : GREEN LED connected constantly ON and audio sound of 10000Hz is made by the connected buzzer for 200ms.
+  1. **Stationary** : RED LED connected is blinked at every 500ms (defined by interval_normal variable).
+     ```
+     if (current_state == "Stationary"){
+        if (current_millis - prev_millis >= interval_normal) {
+          prev_millis = current_millis;
+          
+          // Toggle the LED state
+          ledState = !ledState;
+          digitalWrite(redLedPin, ledState ? HIGH : LOW);       // For stationary state, toggle the RED Led
+        }
+     }
+     ```
+  3. **Motion** : BLUE LED connected is blinked at every 500ms (defined by interval_normal variable).
+
+    else if (current_state == "Motion") {
+        if (current_millis - prev_millis >= interval_normal) {
+          prev_millis = current_millis;
+          
+          // Toggle the LED state
+          ledState = !ledState;
+          digitalWrite(blueLedPin, ledState ? HIGH : LOW);       // For motion state, toggle the BLUE Led
+        }
+      }
+      
+  5. **High Jerk** : All LEDs connected are blinked at every 100ms (defined by interval_alert variable) and audio sound of 1000Hz is made by the connected buzzer for 200ms.
+  6. **Displacement Of More Than 1m** : GREEN LED connected constantly ON and audio sound of 10000Hz is made by the connected buzzer for 200ms.
 
 
