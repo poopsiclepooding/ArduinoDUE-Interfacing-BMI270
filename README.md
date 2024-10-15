@@ -5,7 +5,7 @@ Microcontroller used : Arduino DUE
 Important :
   1. [SparkFun_BMI270_Arduino_Library](https://github.com/sparkfun/SparkFun_BMI270_Arduino_Library) or [Arduino_BMI270_BMM150](https://github.com/arduino-libraries/Arduino_BMI270_BMM150) have not been used based on the assumption that we do not have SparkFun BMI270 6DoF IMU Breakout or Arduino Nano 33 BLE Sense Rev2 but rather only a standalone working BMI270 IMU. The API provided directly by Bosh Sensor Tech [BMI270_Sensor_API](https://github.com/boschsensortec/BMI270_SensorAPI) to connect to the BMI270 IMU has been used.
 
-  2. Due to lack of avability of BMI270 the code cannot be verified on actual hardware setup. The working of sensor data processing part of code has been verified by making some fake sensor data and performing state calculations on it. This is available in the file ______. For the final file many examples have been referred to prevent against any errors. A BMI270 Arduino Interface Simulator also couldn't be found. 
+  2. Due to lack of avability of BMI270 the code cannot be verified on actual hardware setup. The working of sensor data processing part of code has been verified by making some fake sensor data and performing state calculations on it. This is available in the file check_sensor_data_processing.ino . For the final file many examples have been referred to prevent against any errors. A BMI270 Arduino Interface Simulator also couldn't be found. 
 
   3. The accelerometer sensor has been assumed to be located at the center of mass of the system. Thus accelerometer only measures linear acceleration and gyroscope readings can be used to get orientation.
 
