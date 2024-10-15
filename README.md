@@ -3,7 +3,7 @@
 Microcontroller used : Arduino DUE
 
 Important :
-  1. I have not used [SparkFun_BMI270_Arduino_Library](https://github.com/sparkfun/SparkFun_BMI270_Arduino_Library) [Arduino_BMI270_BMM150](https://github.com/arduino-libraries/Arduino_BMI270_BMM150) or  because I assumed we do not have SparkFun BMI270 6DoF IMU Breakout or Arduino Nano 33 BLE Sense Rev2 but rather only a standalone working BMI270 IMU. I have used the API provided directly by Bosh Sensor Tech [BMI270_Sensor_API](https://github.com/boschsensortec/BMI270_SensorAPI) to connect to the BMI270 IMU.
+  1. I have not used [SparkFun_BMI270_Arduino_Library](https://github.com/sparkfun/SparkFun_BMI270_Arduino_Library) or [Arduino_BMI270_BMM150](https://github.com/arduino-libraries/Arduino_BMI270_BMM150)  because I assumed we do not have SparkFun BMI270 6DoF IMU Breakout or Arduino Nano 33 BLE Sense Rev2 but rather only a standalone working BMI270 IMU. I have used the API provided directly by Bosh Sensor Tech [BMI270_Sensor_API](https://github.com/boschsensortec/BMI270_SensorAPI) to connect to the BMI270 IMU.
 
   2. Due to lack of avability of BMI270 I cannot verify the working of the code on actual hardware setup. I have verified the working of sensor data processing by making some fake sensor data and performing state calculations on it. This is available in the file ______. For the final file I have referred to many examples to prevent against any errors. I also couldn't find a BMI270 Arduino Interface Simulator. 
 
