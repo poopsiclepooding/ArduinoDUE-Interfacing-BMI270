@@ -1,6 +1,7 @@
 # ArduinoDUE-Interfacing-BMI270
 
 Microcontroller used : Arduino DUE
+Datasheet of BMI270 : [Datasheet](https://download.mikroe.com/documents/datasheets/bst-bmi270-ds000-2_datasheet.pdf)
 
 Important :
   1. [SparkFun_BMI270_Arduino_Library](https://github.com/sparkfun/SparkFun_BMI270_Arduino_Library) or [Arduino_BMI270_BMM150](https://github.com/arduino-libraries/Arduino_BMI270_BMM150) have not been used based on the assumption that we do not have SparkFun BMI270 6DoF IMU Breakout or Arduino Nano 33 BLE Sense Rev2 but rather only a standalone working BMI270 IMU. The API provided directly by Bosh Sensor Tech [BMI270_Sensor_API](https://github.com/boschsensortec/BMI270_SensorAPI) to connect to the BMI270 IMU has been used.
