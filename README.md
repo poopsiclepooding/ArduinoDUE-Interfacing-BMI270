@@ -13,6 +13,9 @@ Important :
   
   5. I have explained parts of the code below. Refer to comments given in code for in-depth understanding.
 
+Here is the schematic diagram for the connections :
+
+
 ## Part 1 : Connecting To BMI270
 
 This is done using [BMI270_Sensor_API](https://github.com/boschsensortec/BMI270_SensorAPI) library provided by Bosh Sensor Tech. 
