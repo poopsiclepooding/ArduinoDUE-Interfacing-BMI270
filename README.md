@@ -59,9 +59,9 @@ Module Working :
      
   6. True acceleration values are now used to calculate displacement, velocity and jerk. The thresholds for each states are defined as:
      ```
-    float displacement_threshold = 1; // Threshold for displacement (m)
-    float motion_threshold = 0.05; // Threshold for motion (m/s)
-    float jerk_threshold = 3; // Threshold for high jerk (m/s^3)
+      float displacement_threshold = 1; // Threshold for displacement (m)
+      float motion_threshold = 0.05; // Threshold for motion (m/s)
+      float jerk_threshold = 3; // Threshold for high jerk (m/s^3)
      ```
      
   7. Based on these values final states are calculated.
