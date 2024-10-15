@@ -1,6 +1,7 @@
 # ArduinoDUE-Interfacing-BMI270
 
 Microcontroller used : Arduino DUE
+
 Datasheet of BMI270 : [Datasheet](https://download.mikroe.com/documents/datasheets/bst-bmi270-ds000-2_datasheet.pdf)
 
 Important :
