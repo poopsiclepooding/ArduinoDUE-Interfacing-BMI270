@@ -57,6 +57,7 @@ Module Working :
   6. True acceleration values are now used to calculate displacement, velocity and jerk.
      
   7. Based on these values final states are calculated.
+     
     ```
     if (current_state == "Stationary") {
       State_Signal(current_state, prev_state, prev_millis, current_millis, ledState);
