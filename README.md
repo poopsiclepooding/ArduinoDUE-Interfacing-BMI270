@@ -85,7 +85,7 @@ Module Working :
 
 ## Part 3 : Audio and Visual Representation Of States
 
-To make non-blocking code (allow peripherals like LED and buzzer to run alongside processing code) I have used millis() function for making LED PWN signal and tone() to transmit square wave for buzzer.
+To make non-blocking code (allow peripherals like LED and buzzer to run alongside processing code): millis() function for making LED PWN signal and tone() to transmit square wave for buzzer are used.
 2 Switches are also provided. SW1 starts the system. SW2 stops the systems and resets it.
 
 Representation Of States :
