@@ -125,16 +125,16 @@ Representation Of States :
      ```
      
   4. **Displacement Of More Than 1m** : GREEN LED connected constantly ON and audio sound of 10000Hz is made by the connected buzzer for 200ms.
-    ```
-    else if (current_state == "Displaced") {
-        if (current_millis - prev_millis >= interval_alert) {
-          // Set LED High
-          digitalWrite(greenLedPin, HIGH);  // For displaced by more than 1m state, make the GREEN Led HIGH
-          if (current_millis - prev_millis >= interval_buzz){
-            tone(buzzerPin, 10000, 200);   // Make a 10000Hz tone for 200ms
+     ```
+      else if (current_state == "Displaced") {
+          if (current_millis - prev_millis >= interval_alert) {
+            // Set LED High
+            digitalWrite(greenLedPin, HIGH);  // For displaced by more than 1m state, make the GREEN Led HIGH
+            if (current_millis - prev_millis >= interval_buzz){
+              tone(buzzerPin, 10000, 200);   // Make a 10000Hz tone for 200ms
+            }
+            prev_millis = current_millis;
           }
-          prev_millis = current_millis;
         }
-      }
-    ```
+     ```
 
