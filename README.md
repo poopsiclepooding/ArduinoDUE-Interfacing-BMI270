@@ -77,6 +77,7 @@ Module Working :
 ## Part 3 : Audio and Visual Representation Of States
 
 To make non-blocking code (allow peripherals like LED and buzzer to run alongside processing code) I have used millis() function for making LED PWN signal and tone() to transmit square wave for buzzer.
+2 Switches are also provided. SW1 starts the system. SW2 stops the systems and resets it.
 
 Representation Of States :
 
@@ -92,19 +93,48 @@ Representation Of States :
         }
      }
      ```
-  3. **Motion** : BLUE LED connected is blinked at every 500ms (defined by interval_normal variable).
-
-    else if (current_state == "Motion") {
-        if (current_millis - prev_millis >= interval_normal) {
+     
+  2. **Motion** : BLUE LED connected is blinked at every 500ms (defined by interval_normal variable).
+     ```
+      else if (current_state == "Motion") {
+          if (current_millis - prev_millis >= interval_normal) {
+            prev_millis = current_millis;
+            
+            // Toggle the LED state
+            ledState = !ledState;
+            digitalWrite(blueLedPin, ledState ? HIGH : LOW);       // For motion state, toggle the BLUE Led
+          }
+        }
+     ```
+     
+  3. **High Jerk** : All LEDs connected are blinked at every 100ms (defined by interval_alert variable) and audio sound of 1000Hz is made by the connected buzzer for 200ms.
+     ```
+      else if (current_state == "High Jerk") {
+          if (current_millis - prev_millis >= interval_alert) {
+            // Toggle the LED state
+            ledState = !ledState;
+            digitalWrite(greenLedPin, ledState ? HIGH : LOW);  // For high jerk state, toggle all Leds
+            digitalWrite(blueLedPin, ledState ? HIGH : LOW);
+            digitalWrite(redLedPin, ledState ? HIGH : LOW);
+            if (current_millis - prev_millis >= interval_buzz){
+              tone(buzzerPin, 1000, 200);   // Make a 1000Hz tone for 200ms
+            }
+            prev_millis = current_millis;
+          }
+      }
+     ```
+     
+  4. **Displacement Of More Than 1m** : GREEN LED connected constantly ON and audio sound of 10000Hz is made by the connected buzzer for 200ms.
+    ```
+    else if (current_state == "Displaced") {
+        if (current_millis - prev_millis >= interval_alert) {
+          // Set LED High
+          digitalWrite(greenLedPin, HIGH);  // For displaced by more than 1m state, make the GREEN Led HIGH
+          if (current_millis - prev_millis >= interval_buzz){
+            tone(buzzerPin, 10000, 200);   // Make a 10000Hz tone for 200ms
+          }
           prev_millis = current_millis;
-          
-          // Toggle the LED state
-          ledState = !ledState;
-          digitalWrite(blueLedPin, ledState ? HIGH : LOW);       // For motion state, toggle the BLUE Led
         }
       }
-      
-  5. **High Jerk** : All LEDs connected are blinked at every 100ms (defined by interval_alert variable) and audio sound of 1000Hz is made by the connected buzzer for 200ms.
-  6. **Displacement Of More Than 1m** : GREEN LED connected constantly ON and audio sound of 10000Hz is made by the connected buzzer for 200ms.
-
+    ```
 
