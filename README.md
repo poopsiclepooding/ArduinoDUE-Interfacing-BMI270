@@ -15,6 +15,8 @@ Important :
 
 Here is the schematic diagram for the connections :
 
+![Schematic](Schematic.png)
+
 
 ## Part 1 : Connecting To BMI270
 
