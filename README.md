@@ -11,7 +11,7 @@ Important :
 
   4. Accelerometer values can be used along with gyroscope to give more accurate estimation of orientation. However this only works when there isn't linear motion since we use gravity to calculate the angle change. Enough linear acceleration has been assumed to make readings of accelerometer for orientation calculation incorrect.
   
-  5. I have explained parts of the code below. Refer to comments given in code for in-depth understanding.
+  5. Some parts of the code have been explained below. Refer to comments given in code for in-depth understanding.
 
 Here is the schematic diagram for the connections :
 
