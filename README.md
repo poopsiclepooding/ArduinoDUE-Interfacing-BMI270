@@ -1,4 +1,4 @@
-# ArduinoDUE-Interfacing-BMI270
+# ArduinoDUE Interfacing BMI270
 
 Microcontroller used : Arduino DUE
 
